@@ -191,8 +191,22 @@ body{
     margin: 3px;
 
     border: none;
+    border-radius: 50%;
+
     background: none;
     color: #2C2C54;
+}
+
+.searchBtn .material-icons{
+    border: none;
+    border-radius: 50%;
+
+    padding: 5px;
+}
+
+.searchBtn .material-icons:hover{
+    background: #3C40C6;
+    color: white;
 }
 
 /*========== Main ========*/

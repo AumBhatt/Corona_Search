@@ -420,6 +420,9 @@ footer{
     flex-direction: column;
     align-items: center;
 
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+
     color: white;
     background: #3C40C6;
 

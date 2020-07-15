@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/newCovidIcon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Search</title>
+</head>
+<body>
+<div class="splash">
+
+    <div class="splashLogo">
+        <div class="logo">
+            <img src="images/icons/newCovidIcon.svg">
+        </div>
+        <div class="name">Corona<br>Search</div>
+    </div>
+
+    <div class="tracked">
+        <span style="font-size: 20px;">COVID-19 Tracker</span><br>By Aum Bhatt
+    </div>
+</div>
+
+<div class="masterDiv">
+    <div class="banner">
+        
+        <div class="logoAndName">
+            <div class="logo">
+                <img src="images/icons/newCovidIcon.svg">
+            </div>
+            <div class="name">Corona Search</div>
+        </div>
+
+        <div class="searchBar">
+            <input type="text" class="searchText" placeholder="Search Your Country" onkeypress="enterFunc(event)">
+            <button class="searchBtn" onclick="callApi()">
+                <i class="material-icons">search</i>
+            </button>
+        </div>
+    </div>
+    <!------Banner-------->
+
+    <main>
+        <div class="copyR2">@AumBhatt</div>
+
+        <div class="globalName">
+            <div class="global">
+                Globally
+            </div>
+            <div class="globalImage">
+                <img src="images/icons/pandemic.svg">
+            </div>
+        </div>
+
+        <div class="countryInfo">
+            
+            <button class="backToGlobal" onclick="fetchData('all')">
+                <i class="material-icons">keyboard_arrow_left</i>
+                <i class="material-icons">public</i>
+                <div class="backGlobal">
+                    Global
+                </div>
+            </button>
+
+            <div class="country">
+                <div class="countryName">
+                    Oman, OM
+                </div>
+                <div class="countryMap">
+                    <img id="countryMapImg" src="images/Countries/all-maps/om/vector.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="infoCards">
+
+            <div class="confirmedCard classCard">
+                <span class="cardTitle">Confirmed Cases</span>
+                <img src="images/icons/coronavirus.svg">
+                <div class="info">
+                    <div class="NewConfirmed innerInfo">
+                        <label id="NC">012345678</label><br>
+                        <span>New Cases</span>
+                    </div>
+                    <div class="TotalConfirmed innerInfo">
+                        <label id="TC">012345678</label><br>
+                        <span>Total Cases</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="recoveredCard classCard">
+                <span class="cardTitle">Recovered</span>
+                <img src="images/icons/recovery.svg">
+                <div class="info">
+                    <div class="NewRecovered innerInfo">
+                        <label id="NR">012345678</label><br>
+                        <span>New Recoveries</span>
+                    </div>
+                    <div class="TotalRecovered innerInfo">
+                        <label id="TR">012345678</label><br>
+                        <span>Total Recoveries</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deathCard classCard">
+                <span class="cardTitle">Deaths</span>
+                <img src="images/icons/rip.svg">
+                <div class="info">
+                    <div class="NewDeaths innerInfo">
+                        <label id="ND">012345678</label><br>
+                        <span>New Deaths</span>
+                    </div>
+                    <div class="TotalDeaths innerInfo">
+                        <label id="TD">012345678</label><br>
+                        <span>Total Deaths</span>
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <span class="copyright">
+            By Aum Bhatt
+        </span>
+        
+        <div class="lastUpdated">
+            <label class="lastUpdLbl">Last Updated :</label>
+            <span class="date-time"></span>
+        </div>
+
+        <span class="tracker">
+            COVID-19 Tracker
+        </span>
+
+    </footer>
+<!--/div-->
+</body>
+<script src="js/covid.js"></script>
+
+<script>
+    var searchText;
+    fetchData('all');
+
+    document.querySelector('main').style.display = "none";
+
+    setTimeout(function(){
+        document.querySelector('main').style.display = "flex";
+        document.querySelector('main').className = "animator";
+        setTimeout(function(){document.querySelector('main').className = "";},1500);
+        fetchData('all');
+    },2000);
+
+
+    function enterFunc(event){
+        if(event.keyCode === 13){
+            callApi();
+        }
+    }
+
+    function callApi(){
+        searchText = document.querySelector('.searchText').value;
+        if( searchText === "" ){
+            alert("Please enter a Country to Track Coronavirus!");
+        }
+        else{
+            setTimeout(function(){document.querySelector('main').className = "";},1500);
+            fetchData('countries/' + searchText);
+        }
+    }
+
+</script>
+
+
+</html>

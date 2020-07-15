@@ -1,0 +1,662 @@
+/*  
+    #3C40C6 - Free Speech Blue
+    filter: invert(24%) sepia(92%) saturate(2007%) hue-rotate(230deg) brightness(79%) contrast(98%);
+
+    #2C2C54 - Lucky Point (Dark Blue)
+
+    #FD9644 - Orange Hibiscus
+
+    #009432 - Pixelated Green
+
+    #FF3F34 - Red Orange
+*/
+
+
+body{
+    margin: 0;
+
+    scroll-behavior: smooth;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+*:focus{
+    outline: none;
+}
+
+.copyR2{
+    opacity: 0.5;
+
+    font-weight: bolder;
+    font-size: smaller;
+    text-align: center;
+    color: #3C40C6;
+}
+
+/*========== Splash-Screen ===========*/
+
+.splash{
+    visibility: hidden;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+
+    animation-duration: 2s;
+    animation-name: splash;
+    animation-iteration-count: 1;
+
+    background: #3C40C6;
+}
+
+.splashLogo{
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    animation-duration: 1.5s;
+    animation-name: splashlogo;
+    animation-iteration-count: 1;
+}
+
+.splashLogo .logo img{
+    width: 80px;
+    margin: 10px;
+}
+
+.splashLogo .name{
+    font-size: 35px;
+    color: white;
+}
+
+.tracked{
+    width: 100%;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation-duration: 2s;
+    animation-name: splashlogo;
+    animation-iteration-count: 1;
+
+    text-align: center;
+    color: white;
+}
+
+.masterDiv{
+    visibility: visible;
+    animation-duration: 2s;
+    animation-name: hidemaster;
+    animation-iteration-count: 1;
+}
+
+/*======= banner ========*/
+
+.banner{
+    position: sticky;
+    z-index: 997;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3px;
+
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    animation-duration: 2s;
+    animation-name: banner-hide;
+    animation-iteration-count: 1;
+
+    background: #3C40C6;
+}
+
+/*========= Logo & Name ==========*/
+
+.banner .logoAndName{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3px;
+    margin: 1px;
+
+
+}
+
+.logoAndName .logo img{
+    width: 30px;
+    height: 30px;
+}
+
+.logoAndName .name{
+    
+    font-size: 20px;
+    color: white;
+}
+
+/*========== Search Bar =========*/
+
+.searchBar{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5px;
+    margin: 3px;
+
+    opacity: 0.5;
+
+    border: none;
+    border-radius: 30px;
+
+    background: white;
+    color: white;
+}
+
+.searchBar .searchText{
+    width: 100%;
+
+    padding: 1px;
+    margin: 10px;
+
+    border: none;
+
+    font-size: 15px;
+    font-family: inherit;
+    background: none;
+    color: #2C2C54;
+}
+
+.searchBar .searchBtn{
+    width: auto;
+
+    margin: 3px;
+
+    border: none;
+    background: none;
+    color: #2C2C54;
+}
+
+/*========== Main ========*/
+
+main{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 0px;
+
+}
+
+.animator{
+    animation-duration: 1s;
+    animation-name: main-anime;
+    animation-iteration-count: 1;
+}
+
+/*======== Globally =========*/
+
+.globalName{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 3px;
+    margin: 5px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #3C40C6;
+    color: white;
+}
+
+.globalName .global{
+
+    padding: 2px;
+
+    font-size: 35px;
+}
+
+.globalName .globalImage img{
+
+    padding: 2px;
+    margin-left: 5px;
+
+    width: 45px;
+    height: 45px;
+}
+
+/*========= Country Info =========*/
+
+.countryInfo{
+    width: auto;
+    display: none;
+    flex-direction: column;
+
+    padding: 3px;
+    margin: 5px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: #3C40C6;
+}
+
+.countryInfo .backToGlobal{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 2px;
+    margin: 2px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: inherit;
+    background: none;
+}
+
+.backToGlobal:hover{
+    background: #3C40C6;
+    color: white;
+}
+
+.backToGlobal .backGlobal{
+    padding: 3px;
+}
+
+.countryInfo .country{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.country .countryName{
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 35px;
+}
+
+.country .countryMap img{
+    width: 60px;
+    height: 60px;
+
+    filter: invert(24%) sepia(92%) saturate(2007%) hue-rotate(230deg) brightness(79%) contrast(98%);
+
+}
+
+/*========== Info Cards ==========*/
+
+.infoCards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.infoCards .classCard{
+    width: 95%;
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+                'title title'
+                'icon info';
+
+    padding: 3px;
+    margin: 3px;
+    margin-bottom: 15px;
+
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.classCard .cardTitle{
+    width: 100%;
+    grid-area: title;
+
+    padding: 0px;
+    margin: 1px;
+
+    font-weight: 700;
+    text-align: center;
+}
+
+.classCard img{
+    grid-area: icon;
+    width: 140px;
+    height: 140px;
+
+    padding: 5px;
+}
+
+.classCard .info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 5px;
+
+    text-align: center;
+}
+
+.classCard span{
+
+    font-size: 15px;
+    font-weight: bold;
+    color: #2C2C54;
+}
+
+.info .innerInfo{
+    padding: 5px;
+}
+
+.info label{
+
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+.info span{
+
+    font-size: 17px;
+}
+
+/*======== Individual Cards By Info ==========*/
+
+.confirmedCard{
+
+    background: #FD9644;
+}
+
+.recoveredCard{
+
+    background: #009432;
+}
+
+.deathCard{
+    background: #FF3F34;
+}
+
+/*=========== Footer ==========*/
+
+footer{
+    z-index: 997;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: white;
+    background: #3C40C6;
+
+    font-size: 17px;
+}
+
+footer .lastUpdated{
+
+    padding: 3px;
+
+    text-align: center;
+    font-size: 12px;
+}
+
+.lastUpdated .lastUpdLbl{
+    font-weight: bold;
+}
+
+footer .tracker{
+
+    padding: 3px;
+
+    font-weight: bold;
+}
+
+footer .copyright{
+    display: none;
+}
+
+/*===================== Desktop =======================*/
+
+@media (min-width: 768px){
+
+    .copyR2{
+        display: none;
+    }
+
+/*================= Banner ==================*/
+
+    .banner{
+        flex-direction: row;
+
+        padding: 10px;
+    }
+
+    .banner .logoAndName{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logoAndName .logo img{
+        width: 70px;
+    }
+
+    .logoAndName .name{
+
+        font-size: 26px;
+    }
+
+    .banner .searchBar{
+        margin: 10px;
+    }
+
+/*===================== Main ====================*/
+
+    main{
+        flex-direction: row;
+    }
+
+/*========== Globally =======*/
+
+main .globalName{
+    width: 70%;
+    flex-direction: column;
+
+    background: none;
+}
+
+.globalName .global{
+    width: 250px;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 12px;
+    
+    text-align: center;
+    background: #3C40C6;
+    color: white;
+}
+
+.globalName .globalImage img{
+    width: 400px;
+    height: 400px;
+}
+
+/*============ Country Info ==============*/
+
+    main .countryInfo{
+        width: 70%;
+    }
+
+    .countryInfo .backToGlobal{
+        padding: 4px;
+    }
+
+    .countryInfo .country{
+        flex-direction: column;
+    }
+
+    .country .countryName{
+        width: 50%;
+
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        background: #3C40C6;
+        color: white;
+        text-align: center;
+    }
+
+    .country .countryMap img{
+        width: 400px;
+        height: 400px;
+
+        padding: 5px;
+        margin: 10px;
+    }
+
+/*=============== Info Cards ===============*/
+
+    .infoCards .classCard{
+        width: 95%;
+        grid-template-areas:
+                        'icon title'
+                        'icon info';
+        margin: 10px;
+    }
+
+    .infoCards .info{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .classCard .cardTitle{
+        grid-area: title;
+    }
+
+    .classCard img{
+        grid-area: icon;
+        width: 120px;
+        height: 120px;
+
+        padding: 3px;
+        margin: 10px;
+    }
+
+    .classCard .info{
+        grid-area: info;
+    }
+
+    .info label{
+        font-size: 40px;
+    }
+
+    .info span{
+        font-size: 20px;
+    }
+
+    .info .innerInfo{
+        margin: 10px;
+    }
+
+/*============= Footer ==============*/
+
+    footer{
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+
+        padding: 3px;
+
+        font-size: 17px;
+    }
+
+    footer .lastUpdated{
+        font-size: inherit;
+    }
+
+    footer .tracker{
+        position: absolute;
+        left: 1%;
+    }
+
+    footer .copyright{
+        position: absolute;
+        display: inherit;
+        right: 1%;
+    }
+
+}
+
+@keyframes main-anime{
+    from{
+        transform: translateY(-100%);
+    }
+}
+
+
+@keyframes splash{
+    0%{
+        visibility: visible;
+    }
+    100%{
+    }
+}
+
+
+@keyframes hidemaster{
+    0%{visibility: hidden;}
+    100%{visibility: visible;}
+}
+
+@keyframes splashlogo{
+    0%{
+        left: 0%;
+    }
+    25%{
+        left: 60%;
+    }
+    50%{
+        left: 50%;
+    }
+
+}
+

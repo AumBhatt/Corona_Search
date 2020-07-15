@@ -7,9 +7,16 @@ function fetchData(countryName){
         .then((api) => {
         console.log(`API Response => ${countryName}\n`, api);
 
+        if(api.message === "Country not found or doesn't have any cases"){
+            alert("Country not found or doesn't have any cases.\n\nPlease Try Again with a valid Country!");
+        }
+        else{
         assignVal(countryName, api);
+        }
+    }).catch(err => function(){
+        console.error(err);
 
-    }).catch(err => console.error(err));
+    });
     
 }
 //fetchData('Global');
@@ -74,7 +81,7 @@ function printer(){
     if( countryCode != 'null' ){
         countName.innerHTML = country + ', ' + countryCode;
         console.log(CountryCode);
-        countryMap.src = 'images/Countries/all-maps/' + countryCode + '/vector.svg';
+        countryMap.src = 'images/Countries/all-maps/' + countryCode.toLowerCase() + '/vector.svg';
     }
     else{}
 

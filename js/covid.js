@@ -53,8 +53,13 @@ function assignVal(countryName, api){
     todayDeaths = api.todayDeaths;
     deaths = api.deaths;
 
-
-
+    if(todayCases === 0 && todayRecovered === 0 && todayDeaths === 0){
+        console.log("Today's data N/A.");
+        todayCases = todayRecovered = todayDeaths = 'N/A';
+    }
+    else{
+        console.log('Data Available...');
+    }
     printer();
 }
 

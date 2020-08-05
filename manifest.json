@@ -11,5 +11,6 @@
         "src": "images/newCovidIcon.png",
         "sizes": "512x512"
       }
-    ]
+    ],
+    "background_color": "#3C40C6"
   }

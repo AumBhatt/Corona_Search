@@ -1,0 +1,15 @@
+{
+    "name": "Corona Search",
+    "short_name": "Corona Search",
+    "lang": "en-US",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "theme_color": "#3C40C6",
+    "icons": [
+      {
+        "src": "images/newCovidIcon.png",
+        "sizes": "512x512"
+      }
+    ]
+  }

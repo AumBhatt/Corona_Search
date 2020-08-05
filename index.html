@@ -12,6 +12,12 @@
     <title>Corona Search</title>
 </head>
 <body>
+
+<!-- <div class="showOffline">
+    <img src="images/icons/no-connection.svg" alt="">
+    No Internet..
+</div> -->
+
 <div class="splash">
 
     <div class="splashLogo">
@@ -154,6 +160,14 @@
 <script>
     var searchText;
     fetchData('all');
+/*     if(!navigator.onLine){
+        console.log('Off')
+    }
+    else{
+        console.log('on')
+    } */
+
+    window.addEventListener('offline', function(e){console.log('off');});
 
     document.querySelector('main').style.display = "none";
 

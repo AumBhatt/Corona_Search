@@ -1,7 +1,7 @@
 console.log('sw.js');
 var cache_name = "cov19Track"; // The string used to identify our cache
 
-const ASSETS = [
+const assets = [
     "index.html",
     "js/covid.js",
     "js/install.js",
@@ -38,9 +38,9 @@ self.addEventListener('activate', function(ev){
     console.log('SW Activated!');
 });
 
-self.addEventListener('fetch', function(ev){
+self.addEventListener('fetch', function(event){
     console.log('Fetch ev');
-    if (event.request.url === "https://aumbhatt.github.io/ProjectX") {
+    if (ev.request.url === "https://aumbhatt.github.io/ProjectX") {
         // or whatever your app's URL is
         event.respondWith(
             fetch(event.request).catch(err =>

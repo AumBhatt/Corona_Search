@@ -1,6 +1,24 @@
 console.log('sw.js');
 var cache_name = "cov19Track"; // The string used to identify our cache
 
+const ASSETS = [
+    "index.html",
+    "js/covid.js",
+    "js/install.js",
+    "js/sw.js",
+    "css/style.css",
+    "images/newCovidIcon192.png",
+    "images/newCovidIcon512.png",
+    "images/icons/pandemic.svg",
+    "images/icons/recovery.svg",
+    "images/icons/newCovidIcon.svg",
+    "images/icons/hospital.svg",
+    "images/icons/coronavirus.svg",
+    "images/icons/rip.svg",
+    "images/icons/virus.svg"
+];
+
+
 self.addEventListener("install", event => {
     console.log("installing...");
     event.waitUntil(

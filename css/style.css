@@ -783,7 +783,7 @@ main .globalName{
 
 }
 
-/* .instPrompt{
+.instPrompt{
     bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
@@ -810,4 +810,4 @@ main .globalName{
 
 .instPrompt img{
     border: #3C40C6 solid 3px; border-radius: 12px ;width: 100%; margin-top: 5px;
-} */
+}

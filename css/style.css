@@ -490,7 +490,7 @@ footer .copyright{
 
     position: fixed;
     z-index: 999;
-    width: 60vw;
+    width: 75vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -505,8 +505,8 @@ footer .copyright{
     color: #3C40C6;
     font-weight: bold;
 
-    animation-duration: 10s;
-    animation-name: a2hs;
+    animation-duration: 5s;
+    /* animation-name: a2hs; */
 
 
     background: white;

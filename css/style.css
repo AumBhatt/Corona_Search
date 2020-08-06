@@ -783,3 +783,31 @@ main .globalName{
 
 }
 
+.instPrompt{
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    position: fixed;
+    z-index: 999;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    border: 5px #3C40C6 solid;
+    border-radius: 12px;
+    
+    font-family: inherit;
+    color: #3C40C6;
+    font-weight: bold;
+
+    background: white;
+}
+
+.instPrompt img{
+    border: #3C40C6 solid 3px; border-radius: 12px ;width: 100%; margin-top: 5px;
+}

@@ -14,11 +14,11 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 window.addEventListener('DOMContentLoaded', () => {
   let displayMode = 'browser tab';
-  if (navigator.standalone  && localStorage.getItem('appInstalled') == 'true') {
+  if (navigator.standalone || localStorage.getItem('appInstalled') == 'true') {
     displayMode = 'standalone-ios';
     hidePrompt();
   }
-  if (window.matchMedia('(display-mode: standalone)' && localStorage.getItem('appInstalled') == 'true').matches) {
+  if (window.matchMedia('(display-mode: standalone)' || localStorage.getItem('appInstalled') == 'true').matches) {
     displayMode = 'standalone';
     hidePrompt();
   }
@@ -35,11 +35,12 @@ window.addEventListener('appinstalled', (evt) => {
 });
 
 function showInstallPrompt(){
+  document.querySelector('.a2hs').style.display = "flex";
   document.querySelector('.a2hs').style.animationName = "a2hs";
 }
 
 function hidePrompt(){
-  document.querySelector('.a2hs').style.display = "a2hs";
+  document.querySelector('.a2hs').style.display = "none";
   document.querySelector('.instPrompt').style.display = "none";
 
 }

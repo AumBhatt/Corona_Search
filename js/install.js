@@ -8,20 +8,21 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
-  if(localStorage.getItem('appInstalled') === 'true')
+  if(localStorage.getItem('appInstalled') != 'true')
   showInstallPrompt();
 });
 
 window.addEventListener('DOMContentLoaded', () => {
   let displayMode = 'browser tab';
-  if (navigator.standalone) {
+  if (navigator.standalone  && localStorage.getItem('appInstalled') == 'true') {
     displayMode = 'standalone-ios';
+    hidePrompt();
   }
-  if (window.matchMedia('(display-mode: standalone)').matches) {
+  if (window.matchMedia('(display-mode: standalone)' && localStorage.getItem('appInstalled') == 'true').matches) {
     displayMode = 'standalone';
+    hidePrompt();
   }
   // Log launch display mode to analytics
-  hidePrompt();
   console.log('DISPLAY_MODE_LAUNCH:', displayMode);
 });
 

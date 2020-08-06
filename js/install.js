@@ -34,11 +34,11 @@ window.addEventListener('appinstalled', (evt) => {
 });
 
 function showInstallPrompt(){
-  document.querySelector('.a2hs').getElementsByClassName.animationName = "a2hs";
+  document.querySelector('.a2hs').style.animationName = "a2hs";
 }
 
 function hidePrompt(){
-  installBtnShow.style.display = "none";
+  document.querySelector('.a2hs').style.display = "a2hs";
   document.querySelector('.instPrompt').style.display = "none";
 
 }

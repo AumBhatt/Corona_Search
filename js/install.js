@@ -1,6 +1,10 @@
 var installBtn = document.querySelector('.a2hs-btn');
 var deferredPrompt;
 
+if(localStorage.getItem('appInstalled') == 'true'){
+  hidePrompt();
+}
+
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent the mini-infobar from appearing on mobile
   console.log(e);

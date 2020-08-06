@@ -48,7 +48,7 @@ var installBtnShow = document.querySelector('.a2hs-btn');
 
 installBtnShow.addEventListener('click', function(e){
   deferredPrompt.prompt();
-  installBtnShow.style.display = "none";
+  document.querySelector('.a2hs').style.display = "none";
   document.querySelector('.instPrompt').style.display = "flex";
   deferredPrompt.userChoice.then(function(choiceResult){
     if(choiceResult.outcome === 'accepted'){
